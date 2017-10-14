@@ -22,7 +22,7 @@ class Password_test(unittest.TestCase):
         test_user = User("Test","user") # new user
         test_user.save_user()
 
-        user_exists = User.user_exist("abuuanas30@hotmail.com")
+        user_exists = User.user_exist("abuuanas30@hotmail.com", "Groovy50")
 
         self.assertTrue(user_exists)
 
