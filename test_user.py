@@ -1,4 +1,5 @@
 from user import User
+from user import Credentials
 import unittest
 
 class Password_test(unittest.TestCase):
@@ -9,15 +10,15 @@ class Password_test(unittest.TestCase):
 
 
     def test_init(self):
-        self.assertEqual(self.new_user.user_name,"khalid")
+        self.assertEqual(self.new_account.account,"facebook")
         self.assertEqual(self.new_user.password,"Groovy50")
 
-    def test_user_exists(self):
+    def test_account_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the user.
         '''
 
-        self.new_user.save_user()
+        self.new_account.save_user()
         test_user = User("Test","user") # new user
         test_user.save_user()
 
