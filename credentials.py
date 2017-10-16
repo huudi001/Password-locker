@@ -2,6 +2,7 @@ import random
 
 
 class Credential:
+    #initializing instance variables
     def __init__(self,firstname,lastname,email,password):
         self.firstname = firstname
         self.lastname = lastname
