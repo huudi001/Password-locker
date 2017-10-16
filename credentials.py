@@ -11,6 +11,7 @@ class Credential:
     # class variable that stores credential objects
     user_credentials = []
 
+    #method that saves credentials to the list
     def save_credential(self):
         Credential.user_credentials.append(self)
 
