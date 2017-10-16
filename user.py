@@ -37,10 +37,11 @@ class User:
 
     def delete_account(self):
         User.accounts.remove(self)
-
+    # method for displaying accounts
     @classmethod
     def display_accounts(cls):
         return cls.accounts
+
 
     @classmethod
     def find_account_by_password(cls,word):
