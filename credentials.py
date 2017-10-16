@@ -8,7 +8,7 @@ class Credential:
         self.lastname = lastname
         self.email = email
         self.password = password
-
+    # class variable that stores credential objects
     user_credentials = []
 
     def save_credential(self):
