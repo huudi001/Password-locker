@@ -26,7 +26,7 @@ class User:
     def save_account(self):
             User.accounts.append(self)
 
-
+    #saves  passwords for each account
     def save_account_passwords(account):
         if User.account_exists(account):
             for account in User.accounts.password:
