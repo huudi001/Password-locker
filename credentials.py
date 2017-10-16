@@ -16,7 +16,7 @@ class Credential:
         Credential.user_credentials.append(self)
 
 
-
+    # creating new password
     def new_password(self):
         alphabet = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         pw_length = 8
