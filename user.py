@@ -15,7 +15,7 @@ class User:
     def creating_new_account(self):
         new_account = User("khalid","hassan","abuuanas30@hotmail.com","Shirwadheere50")
         return new_account
-
+    # verifies if account exists
     @classmethod
     def account_exists(cls,word):
         for account in cls.accounts:
