@@ -11,7 +11,7 @@ class User:
         self.lastname = lastname
         self.email = email
         self.password = pasword
-
+     # method for creating new account#
     def creating_new_account(self):
         new_account = User("khalid","hassan","abuuanas30@hotmail.com","Shirwadheere50")
         return new_account
