@@ -22,7 +22,7 @@ class User:
             if account.password == word:
                 return True
         return False
-
+     # saves accounts in the accounts list
     def save_account(self):
             User.accounts.append(self)
 
