@@ -42,7 +42,7 @@ class User:
     def display_accounts(cls):
         return cls.accounts
 
-
+      # method for searching account by password
     @classmethod
     def find_account_by_password(cls,word):
 
