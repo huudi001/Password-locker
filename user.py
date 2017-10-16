@@ -50,7 +50,7 @@ class User:
             if account.password == word:
                 return account
             return "invalid"
-
+     # interface for saving accounts
     @classmethod
     def save_account_passwords(cls,account):
         if User.account_exists(account):
