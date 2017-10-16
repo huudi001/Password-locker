@@ -15,6 +15,6 @@
 *commandline terminal
 *pip package installer
 
-# how to user  it
+# how to uset  it
 run chmod +x run.py
 run /run.py on commandline
