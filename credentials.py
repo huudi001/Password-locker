@@ -26,7 +26,7 @@ class Credential:
             mPw+= alphabet[next_index]
         return mPw
 
-
+    #method that checks existance of credentials
     @classmethod
     def credentials_exists(cls):
         for credential in cls.user_credentials:
