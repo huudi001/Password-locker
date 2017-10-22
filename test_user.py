@@ -3,63 +3,51 @@ import unittest
 
 class Password_test(unittest.TestCase):
     def setUp(self):
-        self.new_account = User("abuuanas30@hotmail.com","Groovy50")
+        self.new_user = User("huudi001","Shirwadheere50")
     def tearDown(self):
-        User.accounts = []
+        User.users = []
 
 
     def test_init(self):
-        self.assertEqual(self.new_account.email,"abuuanas30@hotmail.com")
-        self.assertEqual(self.new_account.password,"Groovy50")
+        self.assertEqual(self."user_name","huudi01")
+        self.assertEqual(self.password,"Shirwadheere")
 
-    def save_account(self):
-
-
-
+    def test_save_user(self):
         User.accounts.append(self)
 
-    def test_user_exists(self):
 
-        #test to check if we can return a Boolean  if we cannot find the user.
-
-
-        self.new_account.save_account()
-        test_account= User("Test","user") # new user
-        test_account.save_account()
-
-        account_exists = User.account_exists("abuuanas30@hotmail.com")
-
-        self.assertFalse(account_exists)
-
-
-
-    def test_save_multiple_accounts(self):
-        self.new_account.save_account()
-        test_account = User("Test","groovy50")
-        test_account.save_account()
-        self.assertEqual(len(User.accounts),2)
-
-    def test_delete_account(self):
+    def test_delete_user(self):
 
             #test_delete_user to test if we can remove a user from  user list
 
-            self.new_account.save_account()
-            test_account = User("Test","user") # new contact
-            test_account.save_account()
+            self.new_user.user()
+            test_user = User("Test","user")
+            test_user.save_user()
 
-            self.new_account.delete_account()# Deleting a contact object
-            self.assertEqual(len(User.accounts),1)
+            self.new_user.delete_user()
+            self.assertEqual(len(User.users),1)
 
-    def test_find_contact_by_password(self):
+    def test_find_user_by_password(self):
 
 
-        self.new_account.save_account()
-        test_account = User("abuuanas30@hotmail.com","Groovy50")
-        test_account.save_account()
+        self.new_user.save_user()
+        test_user = User("huudi001","Shirwadheere50")
+        test_user.save_user()
 
-        found_account = User.find_account_by_password("Groovy50")
+        found_user = User.find_user_by_password("Shirwadheere")
 
-        self.assertEqual(found_account.password,test_account.password)
+        self.assertEqual(found_user.password,test_user.password)
+
+    def test_display_users(self):
+
+
+
+   def test_save_user_password(self)
+
+
+
+
+
 
 
 

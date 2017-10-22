@@ -1,62 +1,27 @@
 import random
-from credentials import Credential
+
 
 class User:
     #a class variable to store users
-    accounts =[]
+    users =[]
 
     #initializing the instance variables
-    def __init__(self,firstname,lastname,email, password):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.email = email
-        self.password = pasword
+    def __init__(self,user_name,password):
+        self.user_name = user_name
+        self.password = password
      # method for creating new account#
-    def creating_new_account(self):
-        new_account = User("khalid","hassan","abuuanas30@hotmail.com","Shirwadheere50")
-        return new_account
-    # verifies if account exists
-    @classmethod
-    def account_exists(cls,word):
-        for account in cls.accounts:
-            if account.password == word:
+    def log_in(self,user,word):
+        for credential in Credential.user_credentials:
+            if user ==credential.user_name  and word == credential.password:
                 return True
-        return False
+            return False
+
      # saves accounts in the accounts list
-    def save_account(self):
-            User.accounts.append(self)
+    def save_user(self,user_n,p_word):
+            saved_user = User.users.append(user_n,sp_word)
+            return saved_user
 
-    #saves  passwords for each account
-    def save_account_passwords(account):
-        if User.account_exists(account):
-            for account in User.accounts.password:
-                account.accounts.append(password)
-            return account
-        else:
-            return "acount dosent exist"
-
-    def delete_account(self):
-        User.accounts.remove(self)
     # method for displaying accounts
     @classmethod
-    def display_accounts(cls):
-        return cls.accounts
-
-      # method for searching account by password
-    @classmethod
-    def find_account_by_password(cls,word):
-
-        for account in cls.accounts:
-            if account.password == word:
-                return account
-            return "invalid"
-     # interface for saving accounts
-    @classmethod
-    def save_account_passwords(cls,account):
-        if User.account_exists(account):
-            for account in cls.User.accounts.password:
-
-                account.accounts.append(password)
-            return account
-        else:
-            return "account dosent exist"
+    def display_users(cls):
+        return cls.users

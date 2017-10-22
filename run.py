@@ -3,83 +3,102 @@
 from user import User
 from credentials import Credential
 
-def create_account(firstname,lastname,email,password):
-    new_account= Credential(firstname,lastname,email,password)
-    return new_account
-
-def Password(new_pass):
-    return Credential.new_password(new_pass)
+def new_registration(user_name,firstname,lastname,email,password):
+    new_r = Credential(user_name,firstname,lastname,email,password)
+    return new_r
 
 
-def save_accounts(acount):
 
-    return User.save_account(acount)
 
-def new_password_for_new_account(account):
-    return User.save_account_passwords(account)
 
-def display_accounts():
-    return User.display_accounts()
 
-def find_contact(password):
-    return User.find_account_by_password(password)
+
+
+def loged(user_name,word):
+    user = User(user_name,word)
+    return user
+
+
+def New_Password(new_pass):
+    new_p_word = Credential.create_new_password(new_pass)
+    return new_p_word
+
+
+def save_user(user_name,password):
+
+    saved_user=  User.save_user(user_name,password)
+    return saved_user
+
+def saving_credentials(credential):
+    c = Credential.save_credentials(credential)
+    return c
+
+
+def display_credential(acouunt):
+    credentials = Credential.display_credentials(account)
+    return credentials
 
 
 def main():
-    print("Hello Welcome to your account-list. What is your name?")
+    print("Hello Welcome to passwordlocker. What is your name?")
     user_name = input()
-    print("Hello", user_name, "what would you like to do?")
+    print("Hello", user_name, "please choose from the list of of short_code to use this app")
     print('\n')
     while True:
-        print("Use these short codes : ca- create a new account, gp - generate password, svap -save account passwords,sa - save account, dpa - display accounts, ex -exit the account list ")
+        print("enter NR to register for new account, enter Lg to log in with your existing credentials, enter np to create a new password", "enter ex to exit, enter DC to display credentials")
         short_code = input().lower()
-        if short_code == 'ac':
-            print("New Account")
+        if short_code == 'nr':
+            print("New Registration")
             print("-"*10)
-            print ("First name ....")
+            print ("user_name ....")
+            u_name = input()
+
+            print("first_ name ...")
             f_name = input()
 
-            print("Last name ...")
+            print("last_name ...")
             l_name = input()
 
-            print("Email address ...")
-            e_address = input()
-
-            print("Password ...")
-            p_word = input
-
-            save_accounts(create_account(f_name,l_name,e_addres,p_word))
-
+            print("email ...")
+            e_m = input()
+            print("password ...")
+            p_w = input()
+            new_registration(u_name,f_name,l_name,e_m,p_w)
+            saving_credentials(new_registration(u_name,f_name,l_name,e_m,p_w))
+            ('\n')
             print ('\n')
-            print("New account" "created")
-            print ('\n')
-        elif short_code == 'da':
-             display_accounts()
-             print("Here is a list of all your accounts")
-             print('\n')
-            
+            print("your registration has been created")
+        elif short_code == "lg":
 
-            else:
-                print("you dont have any accounts saved")
+            print("to log in enter your user name and password")
+            ('\n')
+            print("enter your user name")
+            user_name = input()
+            ('\n')
+            print("enter your password")
+            password = input()
+            loger = loged(user_name,password)
+            ('\n')
+            print("your are now loged in")
+        elif short_code == "np":
+            print("enter new password")
+            new_pas= input()
+            print("your new password is : "+ New_Password(new_pas))
+            ('\n')
 
-        elif short_code == 'gp':
-            print ("enter a pasword")
-            new_pass = input()
-            Password(new_pass)
-            print("new password is", new_pass)
+            ('\n')
+        elif short_code == "dc":
+            print("displaying credentials")
 
-        elif short_code == 'svap':
-            print("enter account you want to make a new pasword")
-            account = input()
-            new_password_for_new_account(account)
-            print ("your account is succesfully saved")
 
-        elif short_code == "ex":
 
-            print("Bye .......")
+
+        else:
+            short_code == 'ex'
             break
-    else:
-        print("please use the short code")
+            print("BYE")
+
+
 
 
 

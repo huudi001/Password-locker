@@ -1,35 +1,40 @@
 import random
 
 
+
 class Credential:
     #initializing instance variables
-    def __init__(self,firstname,lastname,email,password):
-        self.firstname = firstname
-        self.lastname = lastname
+    def __init__(self,user_name,first_name,last_name,email,password):
+        self.firstname = first_name
+        self.lastname = last_name
         self.email = email
         self.password = password
+        self.user_name = user_name
     # class variable that stores credential objects
     user_credentials = []
 
     #method that saves credentials to the list
-    def save_credential(self):
-        Credential.user_credentials.append(self)
+    def register(self):
+        new_account = self.Credential(user_name,first_name,last_name,email,password)
+        return new_account
+
+    def save_credentials(self):
+        self.user_credentials.append(self)
+
+    @classmethod
+    def display_credentials(cls):
+
+        return cls.user_credentials
+
+
 
 
     # creating new password
-    def new_password(self):
+    def create_new_password(self):
         alphabet = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        pw_length = 8
         mPw = ""
-        for i in range(pw_length):
+        p_word_lenght = 8
+        for i in range(p_word_lenght):
             next_index = random.randrange(len(alphabet))
             mPw+= alphabet[next_index]
         return mPw
-
-    #method that checks existance of credentials
-    @classmethod
-    def credentials_exists(cls):
-        for credential in cls.user_credentials:
-            if credential.user_credentials:
-                return True
-        return False
